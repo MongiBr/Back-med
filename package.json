@@ -1,0 +1,56 @@
+{
+  "name": "dicomweb-server",
+  "version": "0.0.0-development",
+  "description": "Lightweight DICOMweb Server with CouchDB",
+  "repository": "https://github.com/dcmjs-org/dicomweb-server",
+  "main": "server.js",
+  "dependencies": {
+    "atob": "^2.1.2",
+    "axios": "^0.21.1",
+    "chai": "^4.2.0",
+    "chai-http": "^4.3.0",
+    "dcmjs": "0.8.3",
+    "fastify": "^2.10.0",
+    "fastify-basic-auth": "^0.5.0",
+    "fastify-cors": "^3.0.0",
+    "fastify-couchdb": "^0.2.0",
+    "fastify-plugin": "^1.6.0",
+    "fastify-static": "^2.5.1",
+    "fs-extra": "^8.1.0",
+    "http": "0.0.0",
+    "keycloak-backend": "^2.0.0",
+    "md5": "^2.2.1",
+    "nano": "^8.1.0",
+    "p-queue": "^6.2.1",
+    "split2": "^3.1.1",
+    "to-array-buffer": "^3.2.0",
+    "underscore": "^1.9.1",
+    "xmlhttprequest": "^1.8.0"
+  },
+  "devDependencies": {
+    "eslint": "^6.7.2",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-prettier": "^6.7.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-mocha": "^6.2.2",
+    "eslint-plugin-prettier": "^3.1.1",
+    "mocha": "^7.1.2",
+    "prettier": "1.19.1"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "pretest": "eslint --ignore-path .gitignore --ignore-path .eslintignore .",
+    "test": "NODE_ENV=test mocha --timeout 10000",
+    "lint": "eslint -c .eslintrc.json --fix . && prettier --write *.js",
+    "test_basic": "NODE_ENV=test.auth.basic mocha testAuth/basicAuthTest.js --timeout 10000",
+    "test_oidc": "NODE_ENV=test.auth.oidc mocha testAuth/oidcAuthTest.js --timeout 10000"
+  },
+  "keywords": [
+    "DICOMweb",
+    "PACS",
+    "server",
+    "CouchDB"
+  ],
+  "author": "Emel Alkim",
+  "license": "ISC"
+}
